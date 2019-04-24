@@ -12,3 +12,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.age {
+  margin: 10px;
+}
+.ageUp,
+.ageDown {
+  margin: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.historyItem {
+  list-style-type: none;
+  border: 1px solid blue;
+  margin: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: grey;
+  width: 50px;
+}
