@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import logo from './logo.svg';
 import { connect } from "react-redux";
-
+import * as actionCreator from "./store/actions/actions"
 class App extends Component {
   render() {
     return (
@@ -13,7 +14,8 @@ class App extends Component {
         <button className="ageDown" onClick={this.props.onAgeDown}>
           AgeDown
         </button>
-        <hr />
+        {this.props.loading && <img src={logo} className="applogo"/>}
+        {/* <hr />
         <div>History</div>
         <div>
           <ul>
@@ -27,7 +29,7 @@ class App extends Component {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
       </div>
     );
   }
@@ -35,14 +37,15 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     age: state.age,
-    history: state.history
+    loading: state.loading
+    // history: state.history
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    onAgeUp: () => dispatch({ type: "AGE_UP", value: 1 }),
-    onAgeDown: () => dispatch({ type: "AGE_DOWN", value: 1 }),
-    onDelete: id => dispatch({ type: "DELETE_ITEM", key: id })
+    onAgeUp: () => dispatch(actionCreator.ageUP(1)),
+    onAgeDown: () => dispatch(actionCreator.ageDown(1)),
+    // onDelete: id => dispatch({ type: "DELETE_ITEM", key: id })
   };
 };
 
