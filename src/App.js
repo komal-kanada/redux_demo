@@ -13,7 +13,7 @@ class App extends Component {
         <button className="ageDown" onClick={this.props.onAgeDown}>
           AgeDown
         </button>
-        <hr />
+        {/* <hr />
         <div>History</div>
         <div>
           <ul>
@@ -27,7 +27,7 @@ class App extends Component {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
       </div>
     );
   }
@@ -35,14 +35,14 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     age: state.age,
-    history: state.history
+    // history: state.history
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
     onAgeUp: () => dispatch({ type: "AGE_UP", value: 1 }),
     onAgeDown: () => dispatch({ type: "AGE_DOWN", value: 1 }),
-    onDelete: id => dispatch({ type: "DELETE_ITEM", key: id })
+    // onDelete: id => dispatch({ type: "DELETE_ITEM", key: id })
   };
 };
 
