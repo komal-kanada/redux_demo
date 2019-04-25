@@ -14,7 +14,7 @@ export const ageUP = (val) => {
     return dispatch => {
         dispatch(loading());
         setTimeout(() => {
-           val++;
+          dispatch(ageUPAsnc(val))
         }, 5000)
     }
 }
